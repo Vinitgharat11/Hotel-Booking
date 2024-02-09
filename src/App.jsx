@@ -1,7 +1,9 @@
+import Service from "./components/Service";
+
 function App() {
   return (
     <>
-      <div className="text-red-500">hello word</div>
+      <Service/>
     </>
   );
 }
