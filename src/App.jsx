@@ -1,13 +1,13 @@
-import Header1 from "./components/header1";
 import Navbar from "./components/navbar";
+import PopularSection from "./components/popularSection";
+import Wrapper from "./components/wrapper";
 
 function App() {
   return (
-    <>
-      <Navbar/>
-      <Header1/>
-     
-    </>
+    <Wrapper>
+      <Navbar />
+      <PopularSection />
+    </Wrapper>
   );
 }
 

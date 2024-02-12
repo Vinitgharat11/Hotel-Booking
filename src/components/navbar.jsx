@@ -17,42 +17,40 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="items-center justify-between hidden h-10 mt-5 ml-16 sm:flex lg:ml-80 xl:ml-[35rem]">
-        <div className="flex items-center justify-around h-6 gap-5">
-          {MenuItems.map((links) => (
-            <p key={links.id}>{links.item}</p>
-          ))}
+      <div className="flex justify-between px-4 py-2 shadow-lg lg:hidden">
+        <div className="">
+          <p className="text-lg font-bold text-primary-btn ">Logo</p>
         </div>
-        <div className="px-5 py-2 text-sm mx-28 bg-primary-btn text-primary-white rounded-3xl ">
-          <button>Login</button>
+        <div className="flex items-center">
+          {showNavIcon ? (
+            <BiMenu size={30} style={{ color: "green" }} onClick={onClick} />
+          ) : (
+            <BiX size={30} style={{ color: "green" }} onClick={onClick} />
+          )}
         </div>
       </div>
-      <div className="flex items-center justify-between py-2 shadow-md bg-primary-white sm:hidden">
-        <p className="ml-4 text-primary-btn">LOGO</p>
-        <BiMenu
-          size={35}
-          className="ml-4 text-primary-btn"
-          onClick={onClick}
-          style={{
-            display: showNavIcon ? "none" : "block",
-          }}
-        />
-        <BiX
-          size={35}
-          className="ml-4 text-primary-btn"
-          onClick={onClick}
-          style={{
-            display: showNavIcon ? "block" : "none",
-          }}
-        />
-      </div>
-      {showNavIcon && (
-        <div className="flex flex-col items-end justify-center mt-2 mr-6 gap-y-4">
-          {MenuItems.map((links) => (
-            <p key={links.id}>{links.item}</p>
+      {!showNavIcon && (
+        <div className="flex flex-col items-end justify-end mr-5 lg:hidden">
+          {MenuItems.map((items) => (
+            <div className="py-1" key={items.id}>
+              <p>{items.item}</p>
+            </div>
           ))}
         </div>
       )}
+
+      <div className="justify-center hidden mt-4 lg:flex">
+        <div className="w-[80vw] h-10  flex gap-5 justify-center items-center ml-10">
+          {MenuItems.map((items) => (
+            <div className="py-1" key={items.id}>
+              <p>{items.item}</p>
+            </div>
+          ))}
+        </div>
+        <div className="w-[10vw] h-10 ">
+          <button className="py-3 rounded-full px-7 bg-primary-btn text-primary-white">login</button>
+        </div>
+      </div>
     </>
   );
 }
