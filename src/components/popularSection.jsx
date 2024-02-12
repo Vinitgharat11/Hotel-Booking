@@ -85,6 +85,7 @@ export default function PopularSection() {
           </div>
         </Carousel>
       </div>
+      {/* desktop version */}
       <div className="flex-col hidden overflow-x-hidden md:flex">
         <h4 className="mx-10 my-3 text-4xl font-semibold">Our Most Popular hotels</h4>
         <p className="mx-10 text-xs w-80 text-primary-btn">
@@ -93,7 +94,7 @@ export default function PopularSection() {
         </p>
         <div className="flex">
           <div className="px-10 ">
-            <div className="w-[24rem] pt-5">
+            <div className="w-[14rem] pt-5 lg:w-[24rem] ">
               <img
                 src={popularHotel1}
                 alt=""
@@ -112,7 +113,7 @@ export default function PopularSection() {
             </div>
           </div>
           <div className="px-10 ">
-            <div className="w-[24rem] pt-5">
+            <div className="w-[14rem] pt-5 lg:w-[24rem]">
               <img
                 src={popularHotel2}
                 alt=""
@@ -131,7 +132,7 @@ export default function PopularSection() {
             </div>
           </div>
           <div className="px-10 ">
-            <div className="w-[24rem] pt-5">
+            <div className="w-[14rem] pt-5 lg:w-[24rem]">
               <img
                 src={popularHotel3}
                 alt=""
